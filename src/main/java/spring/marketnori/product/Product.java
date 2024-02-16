@@ -4,18 +4,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
-import java.time.LocalDate;
+import lombok.Getter;
+import lombok.Setter;
+import spring.marketnori.common.audit.Auditable;
+import java.time.LocalDateTime;
 
 @Entity
-public class Product {
+@Setter
+@Getter
+public class Product extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
     private String name;
     private Long price;
     private Long stockQuantity;
-    private LocalDate saleStartDate;
-    private LocalDate saleEndDate;
+    private LocalDateTime saleStartDate;
+    private LocalDateTime saleEndDate;
     private Long categoryId;
 }
