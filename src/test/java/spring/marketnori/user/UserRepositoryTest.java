@@ -1,25 +1,21 @@
-package spring.marketnori.member;
+package spring.marketnori.user;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
-
+import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Optional;
-
-import static org.assertj.core.api.Assertions.*;
 
 
 @SpringBootTest
-public class MemberRepositoryTest {
+public class UserRepositoryTest {
     @Autowired
-    private MemberRepository memberRepository;
+    private UserRepository memberRepository;
 
     @Test
-//    @Rollback(value = false)
     public void testInsertAndSelect() {
         //given
-        Member member = new Member();
+        User member = new User();
         member.setId("nori");
         member.setName("노찬영");
         member.setPassword("1234");
@@ -28,11 +24,11 @@ public class MemberRepositoryTest {
         member.setAddress("서울특별시");
 
         //when
-        Member saveMember = memberRepository.save(member);
-        Optional<Member> findMember = memberRepository.findById(saveMember.getMemberId());
+        User saveMember = memberRepository.save(member);
+        Optional<User> findMember = memberRepository.findById(saveMember.getUserId());
 
         //then
-        assertThat(findMember.get().getMemberId()).isEqualTo(saveMember.getMemberId());
+        assertThat(findMember.get().getUserId()).isEqualTo(saveMember.getUserId());
 
     }
 }

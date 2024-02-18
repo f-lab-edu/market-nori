@@ -1,31 +1,30 @@
-package spring.marketnori.order;
+package spring.marketnori.orderinfo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import spring.marketnori.product.Product;
 
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
-public class OrderRepositoryTest {
+public class OrderInfoRepositoryTest {
 
     @Autowired
-    OrderRepository orderRepository;
+    OrderInfoRepository orderRepository;
 
     @Test
     public void testInsertAndSelect() {
         // given
-        Order order = new Order();
+        OrderInfo order = new OrderInfo();
         order.setMemberId(3L);
         order.setStatus("배송 중");
         order.setShippingAddress("서울특별시");
 
         // when
-        Order saveOrder = orderRepository.save(order);
-        Optional<Order> findOrder = orderRepository.findById(saveOrder.getOrderId());
+        OrderInfo saveOrder = orderRepository.save(order);
+        Optional<OrderInfo> findOrder = orderRepository.findById(saveOrder.getOrderId());
 
         // then
         assertThat(findOrder.get().getOrderId()).isEqualTo(saveOrder.getOrderId());

@@ -1,4 +1,4 @@
-package spring.marketnori.member;
+package spring.marketnori.user;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,10 +8,10 @@ import spring.marketnori.common.audit.Auditable;
 @Entity
 @Setter
 @Getter
-public class Member extends Auditable {
+public class User extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long memberId;
+    private Long userId;
     private String id;
     private String password;
     private String name;

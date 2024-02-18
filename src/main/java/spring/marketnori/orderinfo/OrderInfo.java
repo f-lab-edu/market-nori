@@ -1,4 +1,4 @@
-package spring.marketnori.order;
+package spring.marketnori.orderinfo;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import spring.marketnori.common.audit.Auditable;
 @Entity
 @Setter
 @Getter
-public class Order extends Auditable {
+public class OrderInfo extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderId;
