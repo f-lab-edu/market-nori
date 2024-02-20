@@ -14,7 +14,7 @@ import spring.marketnori.common.audit.Auditable;
 public class ProductCategory extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long categoryId;
+    private Long productCategoryId;
     private String categoryName;
 
 }
