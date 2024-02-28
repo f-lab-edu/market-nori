@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import spring.marketnori.common.audit.Auditable;
+import spring.marketnori.user.User;
 
 @Entity
 @Getter
@@ -12,6 +13,9 @@ public class Cart extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cartId;
-    private Long memberId;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }

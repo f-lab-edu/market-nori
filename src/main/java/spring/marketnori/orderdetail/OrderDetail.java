@@ -1,12 +1,11 @@
 package spring.marketnori.orderdetail;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import spring.marketnori.common.audit.Auditable;
+import spring.marketnori.orderinfo.OrderInfo;
+import spring.marketnori.product.Product;
 
 @Entity
 @Setter
@@ -15,8 +14,15 @@ public class OrderDetail extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderItemId;
-    private Long orderId;
-    private Long productId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_info_id")
+    private OrderInfo orderInfo;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id")
+    private Product product;
+
     private Long orderPrice;
     private Long quantity;
 }
