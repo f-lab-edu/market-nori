@@ -1,12 +1,13 @@
 package spring.marketnori.productcategory;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import spring.marketnori.common.audit.Auditable;
+import spring.marketnori.product.Product;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Setter
@@ -16,5 +17,8 @@ public class ProductCategory extends Auditable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productCategoryId;
     private String categoryName;
+
+    @OneToMany(mappedBy = "productCategory")
+    List<Product> products = new ArrayList<>();
 
 }
