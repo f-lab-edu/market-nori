@@ -29,31 +29,31 @@
 ### 회원
 |항목|Method|URI|
 |---|------|---|
-|회원가입|POST|/v1/users/join|
-|로그인|POST|/v1/login|
-|회원정보 조회|GET|/v1/users/me|
-|회원정보 변경|PATCH|/v1/users/me|
-|회원탈퇴|DELETE|/v1/users/me|
+|회원가입|POST|[/v1/users/join](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=745982262)|
+|로그인|POST|[/v1/login](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=12403764)|
+|회원정보 조회|GET|[/v1/users/me](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=1725120388)|
+|회원정보 변경|PATCH|[/v1/users/me](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=1143057640)|
+|회원탈퇴|DELETE|[/v1/users/me](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=2142537548)|
 
 ### 상품
 |항목|Method|URI|
 |---|------|---|
-|상품 리스트 조회|GET|/v1/products|
-|로그인|POST|/v1/products?name=상품명|
+|상품 리스트 조회|GET|[/v1/products](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=846007630)|
+|로그인|POST|[/v1/products?name=상품명](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=146285256)|
 
 ### 장바구니
 |항목|Method|URI|
 |---|------|---|
-|장바구니 담기|POST|/v1/me/carts/products/{productsId}|
-|장바구니 조회|GET|/v1/me/carts|
-|장바구니 삭제|DELETE|/v1/me/carts/products/{productsId}|
+|장바구니 담기|POST|[/v1/me/carts/products/{productsId}](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=296307125)|
+|장바구니 조회|GET|[/v1/me/carts](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=221536156)|
+|장바구니 삭제|DELETE|[/v1/me/carts/products/{productsId}](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=368351774)|
 
 ### 주문
 |항목|Method|URI|
 |---|------|---|
-|주문하기|POST|/v1/orders|
-|주문내역 조회|GET|/v1/me/orders|
-|주문취소|PATCH|/v1/me/orders/{orderId}|
+|주문하기|POST|[/v1/orders](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=427442161)|
+|주문내역 조회|GET|[/v1/me/orders](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=1090431711)|
+|주문취소|PATCH|[/v1/me/orders/{orderId}](https://docs.google.com/spreadsheets/d/1TijrwkxC5u_0ovg4zcTg_7nvaB9PWPK0r3xv9kOOsbM/edit#gid=918172445)|
 
 
 # 주요 기능 시퀀스 다이어그램
