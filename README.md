@@ -12,8 +12,40 @@
 - gradle
 
 # ERD
+<p align="center">
+  <img src="https://github.com/f-lab-edu/market-nori/assets/63999547/b3d2d498-098e-4451-be43-593509f545ee">
+</p>
 
-# API 목록
+# API 리스트
+### 회원
+|항목|Method|URI|
+|---|------|---|
+|회원가입|POST|/v1/users/join|
+|로그인|POST|/v1/login|
+|회원정보 조회|GET|/v1/users/me|
+|회원정보 변경|PATCH|/v1/users/me|
+|회원탈퇴|DELETE|/v1/users/me|
+
+### 상품
+|항목|Method|URI|
+|---|------|---|
+|상품 리스트 조회|GET|/v1/products|
+|로그인|POST|/v1/products?name=상품명|
+
+### 장바구니
+|항목|Method|URI|
+|---|------|---|
+|장바구니 담기|POST|/v1/me/carts/products/{productsId}|
+|장바구니 조회|GET|/v1/me/carts|
+|장바구니 삭제|DELETE|/v1/me/carts/products/{productsId}|
+
+### 주문
+|항목|Method|URI|
+|---|------|---|
+|주문하기|POST|/v1/orders|
+|주문내역 조회|GET|/v1/me/orders|
+|주문취소|PATCH|/v1/me/orders/{orderId}|
+
 
 # 주요 기능 시퀀스 다이어그램
 
