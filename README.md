@@ -11,6 +11,10 @@
 - JPA
 - gradle
 
+# Git-flow 전략
+
+> 참고: 우아한 형제들 기술블로그 "우린 Git-flow를 사용하고 있어요" [(click👆)](https://techblog.woowahan.com/2553/)
+
 # ERD
 <p align="center">
   <img src="https://github.com/f-lab-edu/market-nori/assets/63999547/b3d2d498-098e-4451-be43-593509f545ee">
