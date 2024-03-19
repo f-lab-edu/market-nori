@@ -69,5 +69,5 @@
 ---
 
 # 📌 이슈 해결 사례
-[#1] 상품 목록 조회 시 순환 참조 발생 현상 개선
+[#1] [상품 목록 조회 시 순환 참조 발생 현상 개선](https://github.com/no-cy/TIL/blob/main/study/spring-issue/%EC%88%9C%ED%99%98%EC%B0%B8%EC%A1%B0.md)
 
