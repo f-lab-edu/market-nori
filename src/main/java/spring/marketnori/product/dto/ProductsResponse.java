@@ -23,6 +23,8 @@ public class ProductsResponse {
         private LocalDateTime saleStartDate;
         private LocalDateTime saleEndDate;
 
+        public ProductDto() {}
+
         public ProductDto(Product product) {
             this.productId = product.getProductId();
             this.categoryName = product.getProductCategory().getCategoryName();

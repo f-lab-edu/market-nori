@@ -28,9 +28,11 @@ dependencies {
 	implementation "org.springframework.boot:spring-boot-starter-security"
 	implementation "org.springframework.security:spring-security-web"
 	implementation "org.springframework.security:spring-security-config"
+	implementation "org.mapstruct:mapstruct:1.5.5.Final"
 	runtimeOnly 'com.mysql:mysql-connector-j'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor "org.mapstruct:mapstruct-processor:1.5.5.Final"     // MapStruct는 Lombok보다 뒤에 선언이 되어야 함.
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
