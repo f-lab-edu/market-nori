@@ -34,7 +34,7 @@ public class ProductController {
 
             List<ProductsResponse.ProductDto> products = productService.findProductsByKeyword(keyword);
             if (products.isEmpty()) {
-                log.info("The product is empty.");
+                log.debug("The product is empty.");
                 return ResponseEntity.noContent().build();
             }
 
