@@ -3,6 +3,8 @@ package spring.marketnori.orderdetail;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
+import spring.marketnori.orderinfo.OrderInfo;
 import spring.marketnori.product.Product;
 
 import java.util.Optional;
@@ -15,11 +17,14 @@ public class OrderDetailRepositoryTest {
     OrderDetailRepository orderDetailRepository;
 
     @Test
+    @Transactional
     public void testInsertAndSelect() {
         // given
         OrderDetail orderDetail = new OrderDetail();
-        orderDetail.setOrderId(1L);
-        orderDetail.setProductId(1L);
+        orderDetail.setOrderInfo(new OrderInfo());
+        orderDetail.getOrderInfo().setOrderInfoId(1L);
+        orderDetail.setProduct(new Product());
+        orderDetail.getProduct().setProductId(1L);
         orderDetail.setOrderPrice(12000L);
         orderDetail.setQuantity(12L);
 

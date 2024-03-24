@@ -3,7 +3,6 @@ package spring.marketnori.productcategory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import spring.marketnori.product.Product;
 
 import java.util.Optional;
 
@@ -22,9 +21,9 @@ public class ProductCategoryRepositoryTest {
 
         // when
         ProductCategory saveProductCategory = productCategoryRepository.save(productCategory);
-        Optional<ProductCategory> findProductCategory = productCategoryRepository.findById(saveProductCategory.getCategoryId());
+        Optional<ProductCategory> findProductCategory = productCategoryRepository.findById(saveProductCategory.getProductCategoryId());
 
         // then
-        assertThat(findProductCategory.get().getCategoryId()).isEqualTo(saveProductCategory.getCategoryId());
+        assertThat(findProductCategory.get().getProductCategoryId()).isEqualTo(saveProductCategory.getProductCategoryId());
     }
 }
