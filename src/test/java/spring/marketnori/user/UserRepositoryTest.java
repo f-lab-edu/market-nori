@@ -3,6 +3,8 @@ package spring.marketnori.user;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import java.util.Optional;
 
@@ -13,10 +15,11 @@ public class UserRepositoryTest {
     private UserRepository memberRepository;
 
     @Test
+    @Transactional
     public void testInsertAndSelect() {
         //given
         User member = new User();
-        member.setId("nori");
+        member.setId("nochan");
         member.setName("노찬영");
         member.setPassword("1234");
         member.setPhone("01012345678");

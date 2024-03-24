@@ -3,7 +3,8 @@ package spring.marketnori.payment;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import spring.marketnori.orderdetail.OrderDetail;
+import org.springframework.transaction.annotation.Transactional;
+import spring.marketnori.orderinfo.OrderInfo;
 
 import java.util.Optional;
 
@@ -16,10 +17,12 @@ public class PaymentRepositoryTest {
     PaymentRepository paymentRepository;
 
     @Test
+    @Transactional
     public void testInsertAndSelect() {
         // given
         Payment payment = new Payment();
-        payment.setOrderId(1L);
+        payment.setOrderInfo(new OrderInfo());
+        payment.getOrderInfo().setOrderInfoId(1L);
         payment.setPaymentMethod("신용카드");
         payment.setAmount(144000L);
         payment.setStatus("결제 완료");

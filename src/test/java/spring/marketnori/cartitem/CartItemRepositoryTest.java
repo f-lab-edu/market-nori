@@ -1,9 +1,11 @@
 package spring.marketnori.cartitem;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
+import spring.marketnori.cart.Cart;
+import spring.marketnori.product.Product;
 
 import java.util.Optional;
 
@@ -16,11 +18,14 @@ public class CartItemRepositoryTest {
     CartItemRepository cartItemRepository;
 
     @Test
+    @Transactional
     public void testInsertAndSelect() {
         // given
         CartItem cartItem = new CartItem();
-        cartItem.setCartId(1L);
-        cartItem.setProductId(1L);
+        cartItem.setCart(new Cart());
+        cartItem.getCart().setCartId(1L);
+        cartItem.setProduct(new Product());
+        cartItem.getProduct().setProductId(1L);
         cartItem.setQuantity(12L);
 
         // when

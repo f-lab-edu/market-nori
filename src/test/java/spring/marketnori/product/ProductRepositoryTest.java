@@ -1,9 +1,10 @@
 package spring.marketnori.product;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
+import spring.marketnori.productcategory.ProductCategory;
 
 import java.util.Optional;
 
@@ -15,13 +16,15 @@ public class ProductRepositoryTest {
     ProductRepository productRepository;
 
     @Test
+    @Transactional
     public void testInsertAndSelect() {
         // given
         Product product = new Product();
         product.setName("한라봉");
         product.setPrice(12000L);
         product.setStockQuantity(50000L);
-        product.setCategoryId(1L);
+        product.setProductCategory(new ProductCategory());
+        product.getProductCategory().setProductCategoryId(1L);
 
         // when
         Product saveProduct = productRepository.save(product);
